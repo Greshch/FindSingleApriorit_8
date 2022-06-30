@@ -1,5 +1,11 @@
 // FindOddApriorit_8.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+/*
+		Description
+First of all I creatred a bool array with the name doubles for 
+save an no-unique elements. 
+Last loops output only unique elements(if this doubles[i] == false)
+*/
 
 #include <iostream>
 
