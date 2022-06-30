@@ -5,6 +5,33 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int arr[] = { 10, -1, 10, 24, -1, -11, 14,  24, 7, 14 };
+    const int szArray = sizeof arr / sizeof arr[0];
+	int* const pBeg = arr;
+	int* const pEnd = arr + szArray;
+
+	bool doubles[szArray] = { false };
+	for (int* pI = pBeg; pI != pEnd; ++pI)
+	{
+		for (int* pJ = pBeg; pJ != pEnd; ++pJ)
+		{
+			if (pI != pJ && *pI == *pJ)
+			{
+				//std::cout << *pI << "\n";
+				int index = pJ - pBeg;
+				*(doubles + index) = true;
+			}
+		}
+	}
+	
+	for (int* pI = pBeg; pI != pEnd; ++pI)
+	{
+		int index = pI - pBeg;
+		if (*(doubles + index) == false)
+		{
+			std::cout << *pI << " ";
+		}
+	}
+	std::cout << "\n";
 }
 
